@@ -11,8 +11,10 @@ class Monitor:
 
     def controller_init(self):
         self.controller = Controller()
-        self.controller.set_data(self.request)
+        if self.request is not None:
+            self.controller.set_data(self.request)
 
+    # Принимает фрейм
     def consume(self, request):
         self.request = request
 
